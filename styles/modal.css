@@ -1,0 +1,113 @@
+.modal-overlay {
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: none;
+    transition: all .3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: #d6d6d61c;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.modal {
+    background-color: #FFFF;
+    border: 1px solid #dadada;
+    border-radius: .6rem;
+    width: min(90%, 512px);
+    height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 13px #b3b3b37e;
+}
+
+
+.modal-overlay.active .modal form {
+    padding: 1rem;
+    position: relative;
+}
+
+.modal-overlay.active .modal form legend p {
+    color: #b3b3b3;
+}
+
+.modal form fieldset {
+    padding: 1rem;
+    border: none;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-container label {
+    border-width: 1px 1px 0;
+    border-color: #dadada;
+    border-style: solid;
+    background: #d3830c0e;
+    padding: .4rem;
+    border-radius: .3rem .3rem 0 0;
+    color: #805a22
+}
+
+.input-container input {
+    padding: .8rem;
+    font-size: 1.1em;
+    border: 1px solid #dadada;
+    border-radius: 0 0 .3rem .3rem;
+    outline: none;
+}
+
+form .button-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+}
+
+form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(43, 82, 255);
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+form button:hover {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(32, 66, 216);
+ 
+}
+
+a.close {
+    border-radius: .5rem;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .4;
+    transition: all .3s;
+} 
+
+a:hover{
+    opacity: 1;
+}

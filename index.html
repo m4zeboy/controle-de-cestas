@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Cestas</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Coragem</h1>
+        </header>
+        <main class="container">
+            <section id="status">
+                <div class="status-item" id="last-action">
+                    <h2>Última ação</h2>
+                    <p></p>
+                </div>
+                <div class="status-item" id="total-hamper">
+                    <h2>Total de cestas</h2>
+                    <p></p>
+                </div>
+            </section>
+            <a href="#" id="new-action" onclick="Modal.displayModal()">+ Nova Ação</a>
+            <section id="actions">
+                <table id="data-table" class="container">
+                    <thead>
+                        <tr>
+                            <th>Família</th>
+                            <th>Endereço</th>
+                            <th>Responsável</th>
+                            <th>Qtd. de cestas</th>
+                            <th>Data da entrega</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <p>Grupo Coragem, Paróquia São José de Castilho</p>
+            <small>Desenvolvido por Moisés Silva de Azevedo</small>
+        </footer>
+        <div class="modal-overlay">
+            <div class="modal">
+                <form onsubmit="Form.submit(event)">
+                    <fieldset>
+                        <legend>
+                            <h2>Nova Ação</h2>
+                            <p>Alguem irá receber uma cesta :)</p>
+                        </legend>
+                        <div class="input-container">
+                            <label for="family">Família</label>
+                            <input type="text" name="family" id="family">
+                        </div>
+                        <div class="input-container">
+                            <label for="address">Endereço</label>
+                            <input type="text" name="address" id="address">
+                        </div>
+                        <div class="input-container">
+                            <label for="responsible">Responsável</label>
+                            <input type="text" name="responsible" id="responsible">
+                        </div>
+
+                        <div class="double-input">
+                            <div class="input-container">
+                                <label for="quantity">Qtd. de Cestas</label>
+                                <input type="number" name="quantity" id="quantity">
+                            </div>
+    
+                            <div class="input-container">
+                                <label for="date">Data da entrega</label>
+                                <input type="date" name="date" id="date">
+                            </div>
+                        </div>
+                        <span class="error"></span>
+                        <div class="button-group">
+                            <a href="#" class="close" onclick="Modal.hideModal()">Fechar</a>
+                            <button type="submiit">Salvar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
