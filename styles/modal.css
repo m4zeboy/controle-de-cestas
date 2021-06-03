@@ -57,10 +57,10 @@
     border-width: 1px 1px 0;
     border-color: #dadada;
     border-style: solid;
-    background: #d3830c0e;
+    background: #ececec;
     padding: .4rem;
     border-radius: .3rem .3rem 0 0;
-    color: #805a22
+    color: #444
 }
 
 .input-container input {
@@ -110,4 +110,15 @@ a.close {
 
 a:hover{
     opacity: 1;
+}
+
+span.error.active {
+    padding: 0.4rem;
+    width: 100%;
+    background-color: #ff19190a;
+    border: 1px solid #ff2b2b3d;
+    border-radius: .6rem;
+    color: #ca1c1cdc;
+    display: inline-block;
+    margin-bottom: 1rem;
 }

@@ -1,3 +1,5 @@
+const span_error = document.querySelector('span.error');
+
 const Modal = {
     modal_element: document.querySelector('.modal-overlay'),
     displayModal() {
@@ -5,6 +7,19 @@ const Modal = {
     },
     hideModal() {
         this.modal_element.classList.remove('active')
+        Messages.hide(span_error)
+    }
+}
+
+const Messages = {
+    show(element, message) {
+        element.classList.add('active')
+        element.innerHTML = `<strong>Opa, temos um erro!</strong>
+                             <p>${message}</p>  `
+    },
+    hide(element) {
+        element.classList.remove('active')
+        element.innerHTML = ""
     }
 }
 
@@ -60,7 +75,7 @@ const DOM = {
     },
     getLastAction() {
         if(Action.all.length === 0 && Action.all[Action.all.length -1] === undefined) {
-            return "Nenhuma familía ajudada ainda"
+            return "Nenhuma família ajudada ainda :("
         }
         const last_action = Action.all[Action.all.length -1]
         return `Para a Família ${last_action.family}`
@@ -137,7 +152,7 @@ const Form = {
             this.clearFields()
             Modal.hideModal()
         } catch (error) {
-            alert(error.message)
+            Messages.show(span_error, error.message)
         }
         
     }
