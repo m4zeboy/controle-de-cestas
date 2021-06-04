@@ -1,6 +1,13 @@
 @media (max-width: 800px) {
+    body {
+        font-size: 81.25%;
+    }
     section#status {
         display: flex;
         flex-direction: column;
+    }
+
+    .modal-overlay.active .modal form {
+        padding: .5rem;
     }
 }

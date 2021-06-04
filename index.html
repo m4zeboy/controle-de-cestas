@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/delete-action-modal.css">
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
                     <p></p>
                 </div>
             </section>
-            <a href="#" id="new-action" onclick="Modal.displayModal()">+ Nova Ação</a>
+            <a href="#" id="new-action" onclick="Modal.displayModal('.modal-overlay')">+ Nova Ação</a>
             <section id="actions">
                 <table id="data-table" class="container">
                     <thead>
@@ -72,27 +73,38 @@
                             <input type="text" name="responsible" id="responsible">
                         </div>
 
-                        <div class="double-input">
-                            <div class="input-container">
-                                <label for="quantity">Qtd. de Cestas</label>
-                                <input type="number" name="quantity" id="quantity">
-                            </div>
-    
-                            <div class="input-container">
-                                <label for="date">Data da entrega</label>
-                                <input type="date" name="date" id="date">
-                            </div>
+                        <div class="input-container">
+                            <label for="quantity">Qtd. de Cestas</label>
+                            <input type="number" name="quantity" id="quantity">
+                        </div>
+
+                        <div class="input-container">
+                            <label for="date">Data da entrega</label>
+                            <input type="date" name="date" id="date">
                         </div>
                         <span class="error"></span>
                         <div class="button-group">
-                            <a href="#" class="close" onclick="Modal.hideModal()">Fechar</a>
+                            <a href="#" class="close" onclick="Modal.hideModal('.modal-overlay')">Fechar</a>
                             <button type="submiit">Salvar</button>
                         </div>
                     </fieldset>
                 </form>
             </div>
         </div>
-    </div>
+        
+        <!-- <div class="delete-modal-action-overlay">
+            <div class="delete-action-modal">
+                <div class="text">
+                    <h3>Quer realmente deletar essa ação?</h3>
+                    <p>Não é possível recuperá-la de volta.</p>
+                </div>
+                <div class="button-group">
+                    <a href="#" class="close" onclick="Modal.hideModal('.delete-modal-action-overlay')">&leftarrow; Voltar</a>
+                    <a href="#" class="delete-action-button" onclick="Action.remove(${index})">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
 
     <script src="scripts.js"></script>
 </body>

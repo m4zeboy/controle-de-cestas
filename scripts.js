@@ -1,12 +1,17 @@
 const span_error = document.querySelector('span.error');
 
 const Modal = {
-    modal_element: document.querySelector('.modal-overlay'),
-    displayModal() {
-        this.modal_element.classList.add('active')
+    getModalElement(element) {
+        return document.querySelector(`${element}`)
     },
-    hideModal() {
-        this.modal_element.classList.remove('active')
+    displayModal(modal) {
+        const element = Modal.getModalElement(modal)
+        console.log(modal)
+        element.classList.add('active')
+    },
+    hideModal(modal) {
+        const element = Modal.getModalElement(modal)
+        element.classList.remove('active')
         Messages.hide(span_error)
     }
 }
@@ -34,11 +39,12 @@ const Storage = {
 const Action = {
     all: Storage.get(),
     add(action) {
-        this.all.push(action)
+        Action.all.push(action)
         App.reload()
     },
     remove(index) {
-        this.all.splice(index, 1)
+        console.log(Action.all[index])
+        Action.all.splice(index, 1)
         App.reload()
     },
 
@@ -57,9 +63,9 @@ const DOM = {
     last_action_p: document.querySelector('#last-action p'),
     addAction(action, index) {
         const tr = document.createElement('tr')
-        tr.dataset = index
-        tr.innerHTML = this.innerHTMLAction(action, index)
-        this.tbody.appendChild(tr)
+        tr.dataset.index = index
+        tr.innerHTML = DOM.innerHTMLAction(action, index)
+        DOM.tbody.appendChild(tr)
     },
     innerHTMLAction(action, index) {
         const html = `
@@ -70,6 +76,7 @@ const DOM = {
         <td>${action.date}1</td>
         <td>
             <img src="./assets/delete.svg" alt="remover ação" onclick="Action.remove(${index})">
+            
         </td>`
         return html
     },
@@ -81,8 +88,8 @@ const DOM = {
         return `Para a Família ${last_action.family}`
     },
     renderLastAction(){
-        const family = this.getLastAction()
-        this.last_action_p.innerHTML = `${family}`
+        const family = DOM.getLastAction()
+        DOM.last_action_p.innerHTML = `${family}`
     },
     getTotalHamper(){
         let valorInicial = 0
@@ -92,12 +99,12 @@ const DOM = {
         return soma
     },
     renderTotalHamper(){
-        const total = this.getTotalHamper()
-        this.total_hamper_p.innerHTML = `${total} Cestas.`
+        const total = DOM.getTotalHamper()
+        DOM.total_hamper_p.innerHTML = `${total} Cestas.`
     },
     clearActions() {
-        this.tbody.innerHTML = ""
-    }
+        DOM.tbody.innerHTML = ""
+    },
 }
 
 const Form = {
@@ -108,22 +115,22 @@ const Form = {
     date: document.querySelector('input#date'),
     getFields() {
         return {
-            family: this.family.value,
-            address: this.address.value,
-            responsible: this.responsible.value,
-            quantity: this.quantity.value,
-            date: this.date.value,
+            family: Form.family.value,
+            address: Form.address.value,
+            responsible: Form.responsible.value,
+            quantity: Form.quantity.value,
+            date: Form.date.value,
         }
     },
     validateFields() {
-        const { family, address, responsible, quantity, date } = this.getFields();
+        const { family, address, responsible, quantity, date } = Form.getFields();
 
         if(family.trim() === "" || address.trim() === "" || responsible.trim() === "" || quantity.trim() === "" || date.trim() === "") {
             throw new Error('Preecha todos os campos')
         }
     },
     formatValues() {
-        let { address, family, responsible, quantity, date} = this.getFields()
+        let { address, family, responsible, quantity, date} = Form.getFields()
         date = Utils.formatDate(date);
         return {
             address,
@@ -137,20 +144,20 @@ const Form = {
         Action.add(action)
     },
     clearFields() {
-        this.family.value = "";
-        this.address.value = "";
-        this.responsible.value = "";
-        this.quantity.value = "";
-        this.date.value = "";
+        Form.family.value = "";
+        Form.address.value = "";
+        Form.responsible.value = "";
+        Form.quantity.value = "";
+        Form.date.value = "";
     },
     submit(event) {
         event.preventDefault();
         try {
-            this.validateFields()
-            const action = this.formatValues() 
-            this.saveAction(action) 
-            this.clearFields()
-            Modal.hideModal()
+            Form.validateFields()
+            const action = Form.formatValues() 
+            Form.saveAction(action) 
+            Form.clearFields()
+            Modal.hideModal('.modal-overlay')
         } catch (error) {
             Messages.show(span_error, error.message)
         }

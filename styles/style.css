@@ -13,9 +13,14 @@ header {
     width: 100%;
     text-align: center;
     padding: 4rem 0 6rem;
-    background-color: #FFF;
+    background: linear-gradient(30deg, rgb(67, 255, 42) 0%, rgb(22, 218, 97) 100%);
     /* box-shadow: 2px 3px 7px #dadadad3; */
     border-bottom: 1px solid #dadada    ;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #FBFBFB;
 }
 
 section#status {
