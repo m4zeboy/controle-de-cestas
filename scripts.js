@@ -6,7 +6,6 @@ const Modal = {
     },
     displayModal(modal) {
         const element = Modal.getModalElement(modal)
-        console.log(modal)
         element.classList.add('active')
     },
     hideModal(modal) {
@@ -43,11 +42,11 @@ const Action = {
         App.reload()
     },
     remove(index) {
+        console.log(index)
         console.log(Action.all[index])
         Action.all.splice(index, 1)
         App.reload()
     },
-
 }
 
 const Utils = {
@@ -56,6 +55,7 @@ const Utils = {
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
     }
 }
+
 
 const DOM = {
     tbody: document.querySelector('#data-table tbody'),
@@ -69,6 +69,7 @@ const DOM = {
     },
     innerHTMLAction(action, index) {
         const html = `
+        <td>${index}</td>
         <td>${action.family}</td>
         <td>${action.address}</td>
         <td>${action.responsible}</td>
@@ -76,7 +77,6 @@ const DOM = {
         <td>${action.date}1</td>
         <td>
             <img src="./assets/delete.svg" alt="remover ação" onclick="Action.remove(${index})">
-            
         </td>`
         return html
     },
@@ -167,7 +167,7 @@ const Form = {
 
 const App = {
     init() {
-        Action.all.forEach((action,index) => DOM.addAction(action,index))
+        Action.all.forEach((action, index) => DOM.addAction(action,index))
         DOM.renderTotalHamper()
         DOM.renderLastAction()
         Storage.set(Action.all)
