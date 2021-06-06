@@ -78,40 +78,7 @@
     gap: 1.5rem;
 }
 
-form button {
-    width: 100%;
-    padding: 1rem;
-    background-color: rgb(43, 82, 255);
-    border: none;
-    border-radius: .5rem;
-    color: white;
-    font-weight: 600;
-    font-size: 1.2em;
-    transition: all .3s;
-    cursor: pointer;
-}
 
-form button:hover {
-    width: 100%;
-    padding: 1rem;
-    background-color: rgb(32, 66, 216);
- 
-}
-
-a.close {
-    border-radius: .5rem;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: .4;
-    transition: all .3s;
-} 
-
-a:hover{
-    opacity: 1;
-}
 
 span.error.active {
     padding: 0.4rem;

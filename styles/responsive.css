@@ -10,4 +10,18 @@
     .modal-overlay.active .modal form {
         padding: .5rem;
     }
+
+    #actions ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem
+    }
+
+    li.action-item .content .tags-container {
+        flex-direction: column;
+    }
+
+    .date-tag {
+        margin: .5rem 0 0 0;
+    }
 }

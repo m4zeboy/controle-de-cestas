@@ -1,0 +1,48 @@
+#new-action {
+    display: inline-block;
+    padding: .5rem;
+    background-color: #b0d8cb;
+    color: #FFF;
+    border-radius: .3rem;
+    transition: all .3s;
+}
+
+#new-action:hover {
+    background-color: #1bac7b;
+}
+
+
+button.blue {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(43, 82, 255);
+    border: none;
+    border-radius: .3rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+button.blue:hover {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(32, 66, 216);
+ 
+}
+
+a.close {
+    border-radius: .3rem;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .4;
+    transition: all .3s;
+} 
+
+a:hover{
+    opacity: 1;
+}
