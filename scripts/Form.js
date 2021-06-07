@@ -5,6 +5,7 @@ const Form = {
     quantity: document.querySelector('input#quantity'),
     date: document.querySelector('input#date'),
     span_error: document.querySelector('span.error'),
+    span_success: document.querySelector('span.succes-add-action'),
     getFields() {
         return {
             family: Form.family.value,
@@ -42,6 +43,12 @@ const Form = {
         Form.quantity.value = "";
         Form.date.value = "";
     },
+    displaySuccess() {
+        this.span_success.classList.add('active')
+        setTimeout(() => {
+            this.span_success.classList.remove('active')
+        }, 3000)
+    },
     submit(event) {
         event.preventDefault();
         try {
@@ -49,6 +56,7 @@ const Form = {
             const action = Form.formatValues() 
             Form.saveAction(action) 
             Form.clearFields()
+            this.displaySuccess()
             Modal.hideModal('.modal-overlay')
         } catch (error) {
             console.log(error)

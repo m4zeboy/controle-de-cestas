@@ -80,7 +80,7 @@
 
 
 
-span.error.active {
+.error.active {
     padding: 0.4rem;
     width: 100%;
     background-color: #ff19190a;
@@ -90,3 +90,27 @@ span.error.active {
     display: inline-block;
     margin-bottom: 1rem;
 }
+
+span.succes-add-action {
+    position: absolute;
+    margin-left: -10rem;
+    transition: all .2s;
+    opacity: 0;
+}
+
+span.succes-add-action.active {
+    opacity: 1;
+    margin-left: 0;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    color: #2CFF41;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    border-radius: .2rem;
+    box-shadow: 0px 10px 15px rgba(68, 68, 68, 0.534);
+
+} 
