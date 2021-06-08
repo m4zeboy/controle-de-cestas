@@ -25,7 +25,7 @@ const DOM = {
             </div>
             <div class="aside">
                 <img src="./assets/delete.svg" alt="Excluir Doação." onclick="Action.remove(${index})">
-                <!-- <img src="./assets/edit.svg" alt="Editar Doação."> -->
+                <img src="./assets/edit.svg" alt="Editar Doação." onclick="EditActionForm.init(${index})">
             </div>
         `
         return html

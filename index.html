@@ -22,7 +22,7 @@
         <main class="container">
             <section id="status">
                 <div class="status-item" id="last-action">
-                    <h2>Última ação</h2>
+                    <h2>Última Doação</h2>
                     <p></p>
                 </div>
                 <div class="status-item" id="total-hamper">
@@ -30,65 +30,43 @@
                     <p></p>
                 </div>
             </section>
-            <!-- EM BREVE ================= Barra de pesquisa -->
-            <!-- <div class="search-action">
-                <form action="">
-                    <label for="search-action-input" class="sr-only">Procurar por uma Ação</label>
-                    <input type="text" placeholder="Procurar por uma ação" id="search-action-input">
-                    <button type="submit"><img src="./assets/search.svg" alt="Buscar"></button>
-                </form>
-            </div> -->
-            <a href="#" id="new-action" onclick="Modal.displayModal('.modal-overlay')">+ Nova Ação</a>
+            
+            <a href="#" id="new-action" onclick="Modal.displayModal('#add-action.modal-overlay')">+ Nova Doação</a>
             <section id="actions">
                 <ul>
-                    <!-- <li class="action-item">
-                        <div class="content">
-                            <h3>Família Silva</h3>
-                            <div class="texts-container">
-                                <p class="address-p">Rua Getúlio Vargas, N 584, Bairro Centro </p>
-                                <p>02 Cestas doadas.</p>
-                            </div>
-                            <hr>
-                            <div class="tags-container">
-                                <div class="responsible-tag">Responsável por <strong>José.</strong></div>
-                                <div class="date-tag">Entregue dia <strong>24/05/2021.</strong></div>
-                            </div>
-                        </div>
-                        <div class="aside">
-                            <img src="./assets/delete.svg" alt="Excluir Doação.">
-                            <img src="./assets/edit.svg" alt="Editar Doação.">
-                        </div>
-                    </li> -->
-
+                   
                 </ul>
-                <!-- <table id="data-table" class="container">
-                    <thead>
-                        <tr>
-                            <th>Index</th>
-                            <th>Família</th>
-                            <th>Endereço</th>
-                            <th>Responsável</th>
-                            <th>Qtd. de cestas</th>
-                            <th>Data da entrega</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table> -->
+                <div id="edit"class="modal-overlay ">
+                    <form id="edit-action-form">
+                        <fieldset>
+                            <legend><h2>Editar uma doação</h2></legend>
+                            <select name="select-edit-action" id="select-edit-action" onchange="EditActionForm.changeSelect(event)">
+                                <option value="Selecionar" selected disabled hidden>Selecionar</option>
+                                <option value="family" >Família</option>
+                                <option value="address" >Endereço</option>
+                                <option value="responsible" >Resposável</option>
+                                <option value="quantity" >Qtd de cestas</option>
+                                <option value="date" >Data</option>
+                            </select>
+                            <input type="text" id="edit-input" disabled>
+                            <button type="submit" onclick="EditActionForm.submit(event)">Salvar</button>
+                        </fieldset>
+                    </form>
+                </div>
+                
             </section>
         </main>
         <footer>
             <p>Grupo Coragem, Paróquia São José de Castilho</p>
             <small>Desenvolvido por Moisés Silva de Azevedo</small>
         </footer>
-        <div class="modal-overlay">
+        <!-- ADICIONAR AÇÃo ============================= -->
+        <div id="add-action"class="modal-overlay">
             <div class="modal">
                 <form onsubmit="Form.submit(event)">
                     <fieldset>
                         <legend>
-                            <h2>Nova Ação</h2>
+                            <h2>Nova Doação</h2>
                             <p>Alguem irá receber uma cesta :)</p>
                         </legend>
                         <div class="input-container">
@@ -115,7 +93,7 @@
                         </div>
                         <span class="error"></span>
                         <div class="button-group">
-                            <a href="#" class="close" onclick="Modal.hideModal('.modal-overlay')">Fechar</a>
+                            <a href="#" class="close" onclick="Modal.hideModal('#add-action.modal-overlay')">Fechar</a>
                             <button type="submiit" class="blue">Salvar</button>
                         </div>
                     </fieldset>
