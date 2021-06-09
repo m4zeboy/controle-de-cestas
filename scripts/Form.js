@@ -4,7 +4,7 @@ const Form = {
     responsible: document.querySelector('input#responsible'),
     quantity: document.querySelector('input#quantity'),
     date: document.querySelector('input#date'),
-    span_error: document.querySelector('span.error'),
+    span_error: document.querySelector('#add-action span.error'),
     span_success: document.querySelector('span.succes-add-action'),
     getFields(fields) {
         return {
@@ -70,6 +70,7 @@ const EditActionForm = {
     container: document.querySelector('#edit.modal-overlay'),
     select: document.querySelector('#select-edit-action'),
     input: document.querySelector('input#edit-input'),
+    span_error: document.querySelector('#edit span.error'),
     init(index){
         // alert(index)
         this.container.dataset.action_index = index
@@ -140,7 +141,8 @@ const EditActionForm = {
             this.clearField()
             Modal.hideModal('#edit.modal-overlay')
         } catch (error) {
-            console.log(error)
+            this.span_error.classList.add('active')
+            this.span_error.innerHTML = error.message;
         }
     }    
 }

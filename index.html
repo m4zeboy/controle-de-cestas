@@ -34,24 +34,62 @@
             <a href="#" id="new-action" onclick="Modal.displayModal('#add-action.modal-overlay')">+ Nova Doação</a>
             <section id="actions">
                 <ul>
-                   
+                   <!-- <li class="action-item">
+                        <div class="content">
+                            <div class="content-title">
+                                <h3>Família Silva</h3>
+                                <small>INFORMAÇÕES</small>
+                            </div>
+                            <div class="infos">
+                                <p class="p1">
+                                    <span><img src="./assets/home.svg" alt="endereço"></span> 
+                                    <span>Rua Getúlio Vargas, N 584, Bairro Centro </span>
+                                </p>
+                                <p class="p2">
+                                    <span><img src="./assets/date.svg" alt="Data"></span>
+                                    <span>Entregue dia <strong>24/05/2021.</strong></span>
+                                </p>
+                                <p class="p3">
+                                    <span><img src="./assets/hamper.svg" alt="Cestas"></span>
+                                    <span><strong>02 cestas</strong> doadas.</span>
+                                </p>
+                                <p class="p4">Responsável por <strong>José.</strong></p>
+                            </div>
+                        </div>
+                        <div class="aside">
+                            <img src="./assets/delete.svg" alt="Excluir Doação." class="aside-item">
+                            <img src="./assets/edit.svg" alt="Editar Doação." class="aside-item">
+                        </div>
+                    </li>  -->
                 </ul>
-                <div id="edit"class="modal-overlay ">
-                    <form id="edit-action-form">
-                        <fieldset>
-                            <legend><h2>Editar uma doação</h2></legend>
-                            <select name="select-edit-action" id="select-edit-action" onchange="EditActionForm.changeSelect(event)">
-                                <option value="Selecionar" selected disabled hidden>Selecionar</option>
-                                <option value="family" >Família</option>
-                                <option value="address" >Endereço</option>
-                                <option value="responsible" >Resposável</option>
-                                <option value="quantity" >Qtd de cestas</option>
-                                <option value="date" >Data</option>
-                            </select>
-                            <input type="text" id="edit-input" disabled>
-                            <button type="submit" onclick="EditActionForm.submit(event)">Salvar</button>
-                        </fieldset>
-                    </form>
+                <div id="edit"class="modal-overlay">
+                    <div class="modal">
+                        <form id="edit-action-form">
+                            <fieldset>
+                                <legend>
+                                    <h2>Editar uma doação</h2>
+                                    <p>Agora é possível corrigir sem deletar a doação!</p>
+                                </legend>
+                                <select name="select-edit-action" id="select-edit-action" onchange="EditActionForm.changeSelect(event)">
+                                    <option value="Selecionar" selected disabled hidden>Selecionar</option>
+                                    <option value="family" >Família</option>
+                                    <option value="address" >Endereço</option>
+                                    <option value="responsible" >Resposável</option>
+                                    <option value="quantity" >Qtd de cestas</option>
+                                    <option value="date" >Data</option>
+                                </select>
+                                <div class="input-container">
+                                    <label for="edit-input">Campo a Editar</label>
+                                    <input type="text" id="edit-input" disabled>
+                                </div>
+                                <span class="error"></span>
+                                <div class="button-group">
+                                    <a href="#" class="close" onclick="Modal.hideModal('#edit.modal-overlay')">Fechar</a>
+                                    <button type="submit" onclick="EditActionForm.submit(event)" class="blue">Salvar</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
                 
             </section>

@@ -11,22 +11,31 @@ const DOM = {
     },
     innerHTMLAction(action, index) {
         const html = `  
-            <div class="content">
+        <div class="content">
+            <div class="content-title">
                 <h3>Família ${action.family}</h3>
-                    <div class="texts-container">
-                    <p class="address-p">${action.address}</p>
-                    <em>${action.quantity} Cestas doadas.</em>
-                </div>
-                <hr>
-            <div class="tags-container">
-                <div class="responsible-tag">Responsável por <strong>${action.responsible}.</strong></div>
-                <div class="date-tag">Entregue dia <strong>${action.date}.</strong></div>
+                <small>INFORMAÇÕES</small>
             </div>
+            <div class="infos">
+                <p class="p1">
+                    <span><img src="./assets/home.svg" alt="endereço"></span> 
+                    <span>${action.address}</span>
+                </p>
+                <p class="p2">
+                    <span><img src="./assets/date.svg" alt="Data"></span>
+                    <span>Entregue dia <strong>${action.date}.</strong></span>
+                </p>
+                <p class="p3">
+                    <span><img src="./assets/hamper.svg" alt="Cestas"></span>
+                    <span><strong>${action.quantity}cestas</strong> doadas.</span>
+                </p>
+                <p class="p4">Responsável por <strong>${action.responsible}.</strong></p>
             </div>
-            <div class="aside">
-                <img src="./assets/delete.svg" alt="Excluir Doação." onclick="Action.remove(${index})">
-                <img src="./assets/edit.svg" alt="Editar Doação." onclick="EditActionForm.init(${index})">
-            </div>
+        </div>
+        <div class="aside">
+            <img src="./assets/delete.svg" alt="Excluir Doação." class="aside-item" onclick="Action.remove(${index})">
+            <img src="./assets/edit.svg" alt="Editar Doação." class="aside-item" onclick="EditActionForm.init(${index})">
+        </div>
         `
         return html
     },
@@ -55,6 +64,9 @@ const DOM = {
     clearActions() {
         DOM.action_container.innerHTML = ""
     },
+    showActionComplete(){
+        
+    }
 }
 
 const Messages = {
