@@ -1,0 +1,21 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: .3rem;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    padding: .7rem;
+    background-color: #fbfbfb;
+}
+
+td {
+    padding: .2rem;
+}

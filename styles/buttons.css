@@ -1,15 +1,16 @@
-#new-action {
+a#new-action {
     display: inline-block;
     padding: .5rem;
-    background-color: #1c2220;
-    color: rgba(255, 255, 255, 0.493);
+    border: 3px solid #2042d8;
+    background-color: #FFF;
+    color: #2042d8;
     border-radius: .3rem;
     transition: all .3s;
 }
 
-#new-action:hover {
-    background-color: var(--green-light);
-    color: #333;
+a#new-action:hover {
+    background-color: #2042d8;
+    color: #FFF;
 }
 
 
@@ -29,7 +30,7 @@ button.blue {
 button.blue:hover {
     width: 100%;
     padding: 1rem;
-    background-color: rgb(32, 66, 216);
+    background-color: #2042d8;
  
 }
 
@@ -46,4 +47,18 @@ a.close {
 
 a:hover{
     opacity: 1;
+}
+
+a.stroke-button {
+    padding: .5rem;
+    color: #000;
+    border: 3px solid #000;
+    border-radius: .3rem;
+    transition: all .3s;
+}
+
+a.stroke-button:hover {
+    background-color: #000;
+    color: #FFF;
+    border: 3px solid #000;
 }

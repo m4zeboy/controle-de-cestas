@@ -22,7 +22,7 @@ header {
     width: 100%;
     text-align: center;
     padding: 4rem 0 6rem;
-    background: #222;
+    background: #111;
     /* box-shadow: 2px 3px 7px #dadadad3; */
     /* border-bottom: 1px solid #dadada; */
 }
@@ -48,9 +48,9 @@ section#status {
 }
 
 #status p {
-    font-size: 1.8em;
+    font-size: 1.9em;
     font-weight: 400;
-    color: #00b98b;
+    color: #000;
 }
 
 .status-item {
