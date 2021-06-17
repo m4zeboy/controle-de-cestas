@@ -9,5 +9,3 @@ const Utils = {
     },
     
 }
-
-Utils.verifyMonth("0")

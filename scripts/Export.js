@@ -72,17 +72,19 @@ const Export = {
         });
     },
     run() {
-        const actions = Storage.get() || []
-        const period = [actions[0].date, actions[actions.length -1].date]
-        const pdfDocument = window.open('', '', 'width=800px, height=600px')
+        // const actions = Storage.get() || []
+        // const period = [actions[0].date, actions[actions.length -1].date]
+        // const pdfDocument = window.open('', '', 'width=800px, height=600px')
 
-        // verificar o mês 
-        const lastActionDate = actions[actions.length - 1].date
-        const monthOfLastDonate = Utils.getMonth(lastActionDate)
-        pdfDocument.document.write(this.createHTML({month: monthOfLastDonate, from: period[0], to: period[1]}))
-        this.renderTable(actions, pdfDocument)
-        pdfDocument.print()
-        pdfDocument.close()
+        // // verificar o mês 
+        // const lastActionDate = actions[actions.length - 1].date
+        // const monthOfLastDonate = Utils.getMonth(lastActionDate)
+        // pdfDocument.document.write(this.createHTML({month: monthOfLastDonate, from: period[0], to: period[1]}))
+        // this.renderTable(actions, pdfDocument)
+        // pdfDocument.print()
+        // pdfDocument.close()
+
+        const pdfMaker = new PDFMake()
     },
 
 }
