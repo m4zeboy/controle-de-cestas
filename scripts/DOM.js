@@ -64,9 +64,6 @@ const DOM = {
     clearActions() {
         DOM.action_container.innerHTML = ""
     },
-    showActionComplete(){
-        
-    }
 }
 
 const Messages = {
